@@ -1,0 +1,105 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ece276f1-e442-4b09-8ed0-a747fac7f1c6" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>AgricultureCube</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fact Soil Telemetry</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="dfa62a10-0a76-4548-bc78-d59041eadb36">
+          <ID>Fact Soil Telemetry</ID>
+          <Name>Fact Soil Telemetry</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="6a99f517-3ce6-4b69-b5de-fae5970c3423">
+            <DataSourceViewID>AgricultureDW_DSV</DataSourceViewID>
+            <TableID>dbo_FactSoilTelemetry</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Pest Incidents</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="32d243be-9148-4bb4-8253-b4594f9dcff4">
+          <ID>Fact Pest Incidents</ID>
+          <Name>Fact Pest Incidents</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="3f1b04cf-89c4-4ad1-a4a2-41734401dc0b">
+            <DataSourceViewID>AgricultureDW_DSV</DataSourceViewID>
+            <TableID>dbo_FactPestIncidents</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Irrigation</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="323be508-92ad-4923-832b-0c470c5bed51">
+          <ID>Fact Irrigation</ID>
+          <Name>Fact Irrigation</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="82446fde-5f21-4c08-a714-b109989b1681">
+            <DataSourceViewID>AgricultureDW_DSV</DataSourceViewID>
+            <TableID>dbo_FactIrrigation</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Field Operations</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="75bcdb04-be37-4295-863d-013852599c8b">
+          <ID>Fact Field Operations</ID>
+          <Name>Fact Field Operations</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c7b985ee-2190-4522-9bc2-0cf087437ce0">
+            <DataSourceViewID>AgricultureDW_DSV</DataSourceViewID>
+            <TableID>dbo_FactFieldOperations</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Crop Yield</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="97251052-de8c-49af-b3fa-0e6695eb2bef">
+          <ID>Fact Crop Yield</ID>
+          <Name>Fact Crop Yield</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="4eef330f-54b7-4b84-b71e-7523c302c484">
+            <DataSourceViewID>AgricultureDW_DSV</DataSourceViewID>
+            <TableID>dbo_FactCropYield</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

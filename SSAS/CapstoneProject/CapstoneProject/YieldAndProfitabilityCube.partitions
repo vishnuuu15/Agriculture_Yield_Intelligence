@@ -1,0 +1,548 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="af95b7c2-4f30-464f-87ce-86a513dc974c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>YieldAndProfitabilityCube</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fact Crop Yield</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="1f54c6aa-9049-4f4d-afa5-9e928c21f7e0">
+          <ID>Q3Partition</ID>
+          <Name>Q3Partition</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="7ff69015-536e-4d62-8154-2c6ec33e4a83">
+            <DataSourceID>AgricultureDW</DataSourceID>
+            <QueryDefinition>SELECT * from FactCropYield Where DateTimeID BETWEEN 1 and 2208</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>25000</EstimatedRows>
+          <AggregationDesignID>CropAndYieldAggregation</AggregationDesignID>
+        </Partition>
+        <Partition dwd:design-time-name="9c89f804-2868-4d6d-bcbe-0776ff972c8c">
+          <ID>Q4Partition</ID>
+          <Name>Q4Partition</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="QueryBinding" dwd:design-time-name="82e0f538-c833-4427-9e73-a5f8ed9b48e7">
+            <DataSourceID>AgricultureDW</DataSourceID>
+            <QueryDefinition>SELECT * from FactCropYield Where DateTimeID BETWEEN 2209 and 2880</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <AggregationDesignID>CropAndYieldAggregation</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>CropAndYieldAggregation</ID>
+          <Name>CropAndYieldAggregation</Name>
+          <CreatedTimestamp>2025-11-11T04:28:37.186667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2025-11-11T04:28:37.186667Z</LastSchemaUpdate>
+          <EstimatedRows>25000</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Season</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Season SK</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Region</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Region SK</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Date Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date Time SK</AttributeID>
+                  <EstimatedCount>2880</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Crop</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Crop SK</AttributeID>
+                  <EstimatedCount>8</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Farm</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Farm SK</AttributeID>
+                  <EstimatedCount>30</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Region ID</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Field</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Field SK</AttributeID>
+                  <EstimatedCount>443</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Farm ID</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Season SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Region SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Crop SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Season SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Crop SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Season SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Crop SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Season SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Region SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Season SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Season SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Region SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Season SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Season SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Farm SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Region SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Region SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Region SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Farm SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Season</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Region</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Date Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Crop</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Farm</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Farm SK</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Field</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Field Operations</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="279a4bc0-4f34-46f7-9c96-c6fb083cfa9b">
+          <ID>Fact Field Operations</ID>
+          <Name>Fact Field Operations</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f80bd5be-ad57-4307-8a36-a1c9212920c6">
+            <DataSourceViewID>AgricultureDW_DSV</DataSourceViewID>
+            <TableID>dbo_FactFieldOperations</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

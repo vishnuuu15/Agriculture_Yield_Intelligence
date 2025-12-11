@@ -1,0 +1,84 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{95E2E772-DDDC-0E13-2C23-4797B69AC22C}|CapstoneProject\\CapstoneProject.dwproj|C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\SoilWeatherAndRiskCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{95E2E772-DDDC-0E13-2C23-4797B69AC22C}|CapstoneProject\\CapstoneProject.dwproj|solutionrelative:CapstoneProject\\SoilWeatherAndRiskCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E2E772-DDDC-0E13-2C23-4797B69AC22C}|CapstoneProject\\CapstoneProject.dwproj|C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\WaterAndIrrigationEfficiencyCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{95E2E772-DDDC-0E13-2C23-4797B69AC22C}|CapstoneProject\\CapstoneProject.dwproj|solutionrelative:CapstoneProject\\WaterAndIrrigationEfficiencyCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E2E772-DDDC-0E13-2C23-4797B69AC22C}|CapstoneProject\\CapstoneProject.dwproj|C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\YieldAndProfitabilityCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{95E2E772-DDDC-0E13-2C23-4797B69AC22C}|CapstoneProject\\CapstoneProject.dwproj|solutionrelative:CapstoneProject\\YieldAndProfitabilityCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E2E772-DDDC-0E13-2C23-4797B69AC22C}|CapstoneProject\\CapstoneProject.dwproj|C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\AgricultureCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{95E2E772-DDDC-0E13-2C23-4797B69AC22C}|CapstoneProject\\CapstoneProject.dwproj|solutionrelative:CapstoneProject\\AgricultureCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SoilWeatherAndRiskCube.cube [Design]",
+              "DocumentMoniker": "C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\SoilWeatherAndRiskCube.cube",
+              "RelativeDocumentMoniker": "CapstoneProject\\SoilWeatherAndRiskCube.cube",
+              "ToolTip": "C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\SoilWeatherAndRiskCube.cube [Design]",
+              "RelativeToolTip": "CapstoneProject\\SoilWeatherAndRiskCube.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-11T09:15:22.57Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WaterAndIrrigationEfficiencyCube.cube [Design]",
+              "DocumentMoniker": "C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\WaterAndIrrigationEfficiencyCube.cube",
+              "RelativeDocumentMoniker": "CapstoneProject\\WaterAndIrrigationEfficiencyCube.cube",
+              "ToolTip": "C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\WaterAndIrrigationEfficiencyCube.cube [Design]",
+              "RelativeToolTip": "CapstoneProject\\WaterAndIrrigationEfficiencyCube.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-11T09:15:02.991Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "YieldAndProfitabilityCube.cube [Design]",
+              "DocumentMoniker": "C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\YieldAndProfitabilityCube.cube",
+              "RelativeDocumentMoniker": "CapstoneProject\\YieldAndProfitabilityCube.cube",
+              "ToolTip": "C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\YieldAndProfitabilityCube.cube [Design]",
+              "RelativeToolTip": "CapstoneProject\\YieldAndProfitabilityCube.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-11T09:14:36.824Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AgricultureCube.cube [Design]",
+              "DocumentMoniker": "C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\AgricultureCube.cube",
+              "RelativeDocumentMoniker": "CapstoneProject\\AgricultureCube.cube",
+              "ToolTip": "C:\\Training\\Capstone Project\\SSAS\\CapstoneProject\\CapstoneProject\\AgricultureCube.cube [Design]",
+              "RelativeToolTip": "CapstoneProject\\AgricultureCube.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-11T09:08:36.35Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
