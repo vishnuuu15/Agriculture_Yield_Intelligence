@@ -1,0 +1,5 @@
+IrrigationMethodID,MethodName,EfficiencyPct
+1,Drip,90.0
+2,Sprinkler,75.0
+3,Flood,55.0
+4,Pivot,70.0

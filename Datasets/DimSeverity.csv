@@ -1,0 +1,5 @@
+SeverityID,SeverityLabel,ThresholdIndex
+1,Low,1
+2,Moderate,2
+3,High,3
+4,Severe,4

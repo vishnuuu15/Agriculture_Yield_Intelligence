@@ -1,0 +1,8 @@
+InputMaterialID,MaterialName,Category,Unit
+1,Urea,Fertilizer,kg
+2,DAP,Fertilizer,kg
+3,MOP,Fertilizer,kg
+4,Glyphosate,Pesticide,L
+5,Imidacloprid,Pesticide,L
+6,Hybrid Seed A,Seed,units
+7,Gypsum,SoilAmendment,kg

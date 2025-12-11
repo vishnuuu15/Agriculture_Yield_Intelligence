@@ -1,0 +1,6 @@
+PestID,CommonName,Type,RiskSeasonality
+1,Fall Armyworm,Insect,Monsoon/Summer
+2,Late Blight,Fungus,Cool/Wet
+3,Stem Borer,Insect,Warm/Humid
+4,Rust,Fungus,Cool
+5,Aphids,Insect,Dry/Cool

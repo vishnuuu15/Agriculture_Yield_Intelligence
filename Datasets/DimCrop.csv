@@ -1,0 +1,9 @@
+CropID,CropName,CropType,MaturityDays
+1,Wheat,Cereal,140
+2,Rice,Cereal,120
+3,Maize,Cereal,110
+4,Soybean,Oilseed,115
+5,Chickpea,Pulse,100
+6,Potato,Horticulture,90
+7,Mustard,Oilseed,120
+8,Tomato,Horticulture,80

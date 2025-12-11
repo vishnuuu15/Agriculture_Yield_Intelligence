@@ -1,0 +1,6 @@
+OperationTypeID,OperationTypeName
+1,Tillage
+2,Planting
+3,Fertilizer
+4,Pesticide
+5,Spray
