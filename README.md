@@ -62,8 +62,8 @@ Includes slicers (Region, Farm, Crop, Season) and RLS (Region Manager, Farm Mana
 
 ## 📁 Repository Structure
 
-Agriculture_Yield_Intelligence/
-│
+Agriculture_Yield_Intelligence/  
+│  
 ├── PowerBI/  
 ├── SSIS/  
 ├── SSAS/  
