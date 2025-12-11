@@ -1,4 +1,4 @@
-# 🌾 Agriculture Yield Intelligence & Climate Resilience Analytics
+# 🌾 Agriculture Yield Intelligence
 
 A complete end-to-end agriculture analytics solution built using **SSIS**, **SSAS**, and **Power BI** to forecast crop yield, optimize irrigation, monitor soil health, and assess climate risks through a unified data warehouse and interactive dashboards.
 
@@ -70,7 +70,6 @@ Agriculture_Yield_Intelligence/
 ├── Datasets/
 ├── Documentation/
 └── Screenshots/
-
 
 ---
 
