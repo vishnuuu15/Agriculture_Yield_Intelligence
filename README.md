@@ -64,12 +64,12 @@ Includes slicers (Region, Farm, Crop, Season) and RLS (Region Manager, Farm Mana
 
 Agriculture_Yield_Intelligence/
 │
-├── PowerBI/
-├── SSIS/
-├── SSAS/
-├── Datasets/
-├── Documentation/
-└── Screenshots/
+├── PowerBI/  
+├── SSIS/  
+├── SSAS/  
+├── Datasets/  
+├── Documentation/  
+└── Screenshots/  
 
 ---
 
