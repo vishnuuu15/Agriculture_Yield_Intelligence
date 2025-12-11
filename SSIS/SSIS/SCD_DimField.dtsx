@@ -1,0 +1,1961 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/7/2025 11:12:39 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-0FU31RQ"
+  DTS:CreatorName="DESKTOP-0FU31RQ\User"
+  DTS:DTSID="{4CB334C3-3A99-4F63-9A3E-C558DC48316A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SCD_DimField"
+  DTS:PackageType="5"
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{ECF0962A-076B-4D0C-B806-941AB81ECEC0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-0FU31RQ.AgricultureDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{36AE87C5-8FB7-4F46-8780-4DC1BF71CC3F}"
+      DTS:ObjectName="DESKTOP-0FU31RQ.AgricultureDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-0FU31RQ;Initial Catalog=AgricultureDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-DimField-{36AE87C5-8FB7-4F46-8780-4DC1BF71CC3F}DESKTOP-0FU31RQ.AgricultureDW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DimFieldConn]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7F205AB7-4493-4F10-B675-5FF6E6EC4D8D}"
+      DTS:ObjectName="DimFieldConn">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Training\Capstone Project\Datasets\DimField.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FieldID"
+              DTS:DTSID="{50202950-1AC2-4A0B-836D-6F823033B013}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FarmID"
+              DTS:DTSID="{B945FAF6-0840-477B-B81F-53AFB8A659E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FieldCode"
+              DTS:DTSID="{3972A026-D91A-426B-9A35-9599A3D84A40}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="9"
+              DTS:DataScale="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Latitude"
+              DTS:DTSID="{46862214-74A7-4A55-8A6E-E4F6A1DA729E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="9"
+              DTS:DataScale="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Longitude"
+              DTS:DTSID="{B644A24A-3790-4E98-8DB4-557FC6AC2DD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SoilType"
+              DTS:DTSID="{E33F446F-3912-445A-A79B-32E5ED689E23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Irrigable"
+              DTS:DTSID="{0D960C3C-50B6-4AB9-BCD1-3E3D6DA7B585}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EffectiveFrom"
+              DTS:DTSID="{7C2366E5-A9C4-437C-929C-382A393AC2EA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EffectiveTo"
+              DTS:DTSID="{C8590FDA-51DA-4935-8CD6-D49B679D5796}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IsCurrent"
+              DTS:DTSID="{75E3D3F4-8AE0-4CAC-ADD6-5B70B2AB4036}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1B6071E7-BE80-4D36-871D-6B1003B49479}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="GETDATE()"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Today">
+      <DTS:VariableValue
+        DTS:DataType="7">12/11/2025 10:45:19 PM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load DimField"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8970F52E-6B8F-41C3-ADB6-5733143ED025}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load DimField"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load DimField\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load DimField\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimField\Derived Column.Inputs[Derived Column Input].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[IsCurrent]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_BOOL)("0")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_BOOL)("0")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimField\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load DimField\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimField\Derived Column.Outputs[Derived Column Output].Columns[TempToday Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DimField\Derived Column.Outputs[Derived Column Output].Columns[TempToday Date]"
+                      name="TempToday Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::Today]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::Today]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimField\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load DimField\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimField\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimField\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimField\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load DimField\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimField\Derived Column 1.Inputs[Derived Column Input].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[IsCurrent]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_BOOL)("1")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_BOOL)("1")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimField\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load DimField\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimField\Derived Column 1.Outputs[Derived Column Output].Columns[TempToday]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DimField\Derived Column 1.Outputs[Derived Column Output].Columns[TempToday]"
+                      name="TempToday"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::Today]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::Today]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimField\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load DimField\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimField\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimField\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimField\DimField CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="DimField CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimField\DimField CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DimFieldConn]"
+                  connectionManagerRefId="Package.ConnectionManagers[DimFieldConn]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FieldID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[FieldID]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FieldID]"
+                      name="FieldID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FarmID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[FarmID]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FarmID]"
+                      name="FarmID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FieldCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[FieldCode]"
+                      length="40"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FieldCode]"
+                      name="FieldCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Latitude]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Latitude]"
+                      name="Latitude"
+                      precision="9"
+                      scale="6"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Longitude]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Longitude]"
+                      name="Longitude"
+                      precision="9"
+                      scale="6"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[SoilType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[SoilType]"
+                      length="40"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[SoilType]"
+                      name="SoilType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Irrigable]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[Irrigable]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Irrigable]"
+                      name="Irrigable"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[EffectiveFrom]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[EffectiveFrom]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[EffectiveFrom]"
+                      name="EffectiveFrom"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[EffectiveTo]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[EffectiveTo]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[EffectiveTo]"
+                      name="EffectiveTo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[IsCurrent]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[IsCurrent]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[IsCurrent]"
+                      name="IsCurrent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[FieldID]"
+                      dataType="i4"
+                      name="FieldID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[FarmID]"
+                      dataType="i4"
+                      name="FarmID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[FieldCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="FieldCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      dataType="numeric"
+                      name="Latitude"
+                      precision="9"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      dataType="numeric"
+                      name="Longitude"
+                      precision="9"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[SoilType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="SoilType" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[Irrigable]"
+                      dataType="bool"
+                      name="Irrigable" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[EffectiveFrom]"
+                      dataType="date"
+                      name="EffectiveFrom" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[EffectiveTo]"
+                      dataType="date"
+                      name="EffectiveTo" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimField\DimField DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimField DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimField]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimField\DimField DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-0FU31RQ.AgricultureDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-0FU31RQ.AgricultureDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].Columns[FieldID]"
+                      cachedDataType="i4"
+                      cachedName="FieldID"
+                      externalMetadataColumnId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FieldID]"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FieldID]" />
+                    <inputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].Columns[FarmID]"
+                      cachedDataType="i4"
+                      cachedName="FarmID"
+                      externalMetadataColumnId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FarmID]"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FarmID]" />
+                    <inputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].Columns[FieldCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="FieldCode"
+                      externalMetadataColumnId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FieldCode]"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FieldCode]" />
+                    <inputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].Columns[Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="Latitude"
+                      cachedPrecision="9"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Latitude]" />
+                    <inputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].Columns[Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="Longitude"
+                      cachedPrecision="9"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Longitude]" />
+                    <inputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].Columns[SoilType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="SoilType"
+                      externalMetadataColumnId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SoilType]"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[SoilType]" />
+                    <inputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].Columns[Irrigable]"
+                      cachedDataType="bool"
+                      cachedName="Irrigable"
+                      externalMetadataColumnId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Irrigable]"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Irrigable]" />
+                    <inputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      externalMetadataColumnId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[IsCurrent]" />
+                    <inputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].Columns[TempToday]"
+                      cachedDataType="date"
+                      cachedName="TempToday"
+                      externalMetadataColumnId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveFrom]"
+                      lineageId="Package\Load DimField\Derived Column 1.Outputs[Derived Column Output].Columns[TempToday]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FieldSK]"
+                      dataType="i4"
+                      name="FieldSK" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FieldID]"
+                      dataType="i4"
+                      name="FieldID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FarmID]"
+                      dataType="i4"
+                      name="FarmID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FieldCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="FieldCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      dataType="numeric"
+                      name="Latitude"
+                      precision="9"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      dataType="numeric"
+                      name="Longitude"
+                      precision="9"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SoilType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="SoilType" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Irrigable]"
+                      dataType="bool"
+                      name="Irrigable" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveFrom]"
+                      dataType="dbDate"
+                      name="EffectiveFrom" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveTo]"
+                      dataType="dbDate"
+                      name="EffectiveTo" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimField\DimField DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\DimField DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimField\DimField DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\DimField DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimField\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimField] SET [IsCurrent] = ?, [EffectiveTo] = ? WHERE [FarmID] = ? AND [IsCurrent] = '1'</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimField\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-0FU31RQ.AgricultureDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-0FU31RQ.AgricultureDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      externalMetadataColumnId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[IsCurrent]" />
+                    <inputColumn
+                      refId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input].Columns[TempToday Date]"
+                      cachedDataType="date"
+                      cachedName="TempToday Date"
+                      externalMetadataColumnId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Load DimField\Derived Column.Outputs[Derived Column Output].Columns[TempToday Date]" />
+                    <inputColumn
+                      refId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input].Columns[FieldID]"
+                      cachedDataType="i4"
+                      cachedName="FieldID"
+                      externalMetadataColumnId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FieldID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="bool"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbDate"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimField\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimField\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimField\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimField\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimField\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [FarmID], [Irrigable], [IsCurrent], [SoilType] FROM [dbo].[DimField]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere">[IsCurrent] = '1'</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimField\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-0FU31RQ.AgricultureDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-0FU31RQ.AgricultureDW]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[FarmID]"
+                      cachedDataType="i4"
+                      cachedName="FarmID"
+                      externalMetadataColumnId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FarmID]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FarmID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Irrigable]"
+                      cachedDataType="bool"
+                      cachedName="Irrigable"
+                      externalMetadataColumnId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Irrigable]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Irrigable]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[SoilType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="SoilType"
+                      externalMetadataColumnId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SoilType]"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[SoilType]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[FarmID]"
+                      dataType="i4"
+                      name="FarmID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Irrigable]"
+                      dataType="bool"
+                      name="Irrigable" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SoilType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="SoilType" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimField\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimField\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimField\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimField\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimField\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimField\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimField\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Load DimField\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 1].Columns[FieldID]"
+                      cachedDataType="i4"
+                      cachedName="FieldID"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FieldID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FieldID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 1].Columns[FarmID]"
+                      cachedDataType="i4"
+                      cachedName="FarmID"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FarmID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FarmID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 1].Columns[FieldCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="FieldCode"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FieldCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FieldCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 1].Columns[Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="Latitude"
+                      cachedPrecision="9"
+                      cachedScale="6"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Latitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Latitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 1].Columns[Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="Longitude"
+                      cachedPrecision="9"
+                      cachedScale="6"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Longitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Longitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 1].Columns[SoilType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="SoilType"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[SoilType]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[SoilType]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 1].Columns[Irrigable]"
+                      cachedDataType="bool"
+                      cachedName="Irrigable"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Irrigable]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Irrigable]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 1].Columns[EffectiveFrom]"
+                      cachedDataType="date"
+                      cachedName="EffectiveFrom"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[EffectiveFrom]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[EffectiveFrom]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 1].Columns[EffectiveTo]"
+                      cachedDataType="date"
+                      cachedName="EffectiveTo"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[EffectiveTo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[EffectiveTo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 1].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[IsCurrent]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[IsCurrent]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load DimField\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 2].Columns[FieldID]"
+                      cachedDataType="i4"
+                      cachedName="FieldID"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FieldID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FieldID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 2].Columns[FarmID]"
+                      cachedDataType="i4"
+                      cachedName="FarmID"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FarmID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FarmID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 2].Columns[FieldCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="FieldCode"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[FieldCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FieldCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 2].Columns[Latitude]"
+                      cachedDataType="numeric"
+                      cachedName="Latitude"
+                      cachedPrecision="9"
+                      cachedScale="6"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Latitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Latitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 2].Columns[Longitude]"
+                      cachedDataType="numeric"
+                      cachedName="Longitude"
+                      cachedPrecision="9"
+                      cachedScale="6"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Longitude]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Longitude]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 2].Columns[SoilType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="SoilType"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[SoilType]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[SoilType]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 2].Columns[Irrigable]"
+                      cachedDataType="bool"
+                      cachedName="Irrigable"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[Irrigable]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Irrigable]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 2].Columns[EffectiveFrom]"
+                      cachedDataType="date"
+                      cachedName="EffectiveFrom"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[EffectiveFrom]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[EffectiveFrom]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 2].Columns[EffectiveTo]"
+                      cachedDataType="date"
+                      cachedName="EffectiveTo"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[EffectiveTo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[EffectiveTo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimField\Union All.Inputs[Union All Input 2].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      lineageId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output].Columns[IsCurrent]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[IsCurrent]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load DimField\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimField\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FieldID]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FieldID]"
+                      name="FieldID" />
+                    <outputColumn
+                      refId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FarmID]"
+                      dataType="i4"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FarmID]"
+                      name="FarmID" />
+                    <outputColumn
+                      refId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FieldCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[FieldCode]"
+                      name="FieldCode" />
+                    <outputColumn
+                      refId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Latitude]"
+                      dataType="numeric"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Latitude]"
+                      name="Latitude"
+                      precision="9"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Longitude]"
+                      dataType="numeric"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Longitude]"
+                      name="Longitude"
+                      precision="9"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[SoilType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[SoilType]"
+                      name="SoilType" />
+                    <outputColumn
+                      refId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Irrigable]"
+                      dataType="bool"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[Irrigable]"
+                      name="Irrigable" />
+                    <outputColumn
+                      refId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[EffectiveFrom]"
+                      dataType="date"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[EffectiveFrom]"
+                      name="EffectiveFrom" />
+                    <outputColumn
+                      refId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[EffectiveTo]"
+                      dataType="date"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[EffectiveTo]"
+                      name="EffectiveTo" />
+                    <outputColumn
+                      refId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[IsCurrent]"
+                      dataType="bool"
+                      lineageId="Package\Load DimField\Union All.Outputs[Union All Output 1].Columns[IsCurrent]"
+                      name="IsCurrent" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load DimField.Paths[Derived Column Output]"
+              endId="Package\Load DimField\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Load DimField\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load DimField.Paths[Derived Column Output1]"
+              endId="Package\Load DimField\DimField DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load DimField\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load DimField.Paths[Flat File Source Output]"
+              endId="Package\Load DimField\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Flat File Source Output"
+              startId="Package\Load DimField\DimField CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load DimField.Paths[Historical Attribute Inserts Output]"
+              endId="Package\Load DimField\Derived Column.Inputs[Derived Column Input]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\Load DimField\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
+              refId="Package\Load DimField.Paths[New Output]"
+              endId="Package\Load DimField\Union All.Inputs[Union All Input 1]"
+              name="New Output"
+              startId="Package\Load DimField\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Load DimField.Paths[OLE DB Command Output]"
+              endId="Package\Load DimField\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\Load DimField\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\Load DimField.Paths[Union All Output 1]"
+              endId="Package\Load DimField\Derived Column 1.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Load DimField\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Load DimField"
+          TopLeft="356.5,168.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load DimField">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Load DimField\Union All"
+          TopLeft="290.5,316.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Load DimField\Derived Column 1"
+          TopLeft="268.5,391.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Load DimField\OLE DB Command"
+          TopLeft="121,261.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Load DimField\Slowly Changing Dimension"
+          TopLeft="237.5,86.5" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Load DimField\DimField CSV"
+          TopLeft="270,5.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load DimField\Derived Column"
+          TopLeft="130,183.5" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Load DimField\DimField DB Destination"
+          TopLeft="253.5,464.5" />
+        <EdgeLayout
+          Id="Package\Load DimField.Paths[Union All Output 1]"
+          TopLeft="350.5,358.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimField.Paths[OLE DB Command Output]"
+          TopLeft="287,282.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.1666666666667,34"
+              Start="0,0"
+              End="45.1666666666667,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.1666666666667,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.1666666666667,0"
+                    Point2="45.1666666666667,0"
+                    Point3="45.1666666666667,4" />
+                  <mssgle:LineSegment
+                    End="45.1666666666667,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimField.Paths[New Output]"
+          TopLeft="372.666666666667,128.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,188"
+              Start="0,0"
+              End="0,180.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,180.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,84.533203125,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimField.Paths[Historical Attribute Inserts Output]"
+          TopLeft="308.5,128.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-101.5,55"
+              Start="0,0"
+              End="-101.5,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.2507122507122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.2507122507122"
+                    Point2="0,22.2507122507122"
+                    Point3="-4,22.2507122507122" />
+                  <mssgle:LineSegment
+                    End="-97.5,22.2507122507122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-97.5,22.2507122507122"
+                    Point2="-101.5,22.2507122507122"
+                    Point3="-101.5,26.2507122507122" />
+                  <mssgle:LineSegment
+                    End="-101.5,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-125.80638671875,27.2507122507122,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimField.Paths[Flat File Source Output]"
+          TopLeft="341.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimField.Paths[Derived Column Output1]"
+          TopLeft="350,433.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimField.Paths[Derived Column Output]"
+          TopLeft="205.5,225.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DimField\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{36AE87C5-8FB7-4F46-8780-4DC1BF71CC3F}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DimField]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimField CSV.Outputs[Flat File Source Output].Columns[EffectiveFrom]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;EffectiveFrom&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimField CSV.Outputs[Flat File Source Output].Columns[EffectiveTo]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;EffectiveTo&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimField CSV.Outputs[Flat File Source Output].Columns[FarmID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FarmID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimField CSV.Outputs[Flat File Source Output].Columns[FieldCode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FieldCode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimField CSV.Outputs[Flat File Source Output].Columns[FieldID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FieldID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimField CSV.Outputs[Flat File Source Output].Columns[Irrigable]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Irrigable&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimField CSV.Outputs[Flat File Source Output].Columns[IsCurrent]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;IsCurrent&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimField CSV.Outputs[Flat File Source Output].Columns[Latitude]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Latitude&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimField CSV.Outputs[Flat File Source Output].Columns[Longitude]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Longitude&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DimField CSV.Outputs[Flat File Source Output].Columns[SoilType]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SoilType&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn&gt;IsCurrent&lt;/CurrentIndicatorColumn&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent&gt;1&lt;/ValueCurrent&gt;
+  &lt;ValueExpired&gt;0&lt;/ValueExpired&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DimField\DimField DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
